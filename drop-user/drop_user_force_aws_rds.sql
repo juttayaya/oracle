@@ -21,6 +21,7 @@ BEGIN
             v_serial := i.serial#;
             -- 'kill session' asks the sessions to kill themselves,
             -- Sometimes session cannot kill themselves, so 'disconnect session' has Oracle force a disconnect.
+            -- https://oracle-base.com/articles/misc/killing-oracle-sessions
             dbms_output.put_line('Removing session ''' || v_sid || ',' || v_serial || '''.');
             BEGIN
                 rdsadmin.rdsadmin_util.kill(
